@@ -1,0 +1,33 @@
+# R related 
+*.Rcheck/
+*.tar.gz 
+.Rproj.user
+*.zip
+TODO
+
+# Python related
+## compiled modules
+__pycache__/
+*.pyc
+## pytest related
+.pytest_cache
+.coverage
+## Setuptools distribution folder.
+dist/
+build/
+## Python egg metadata, regenerated from source files by setuptools.
+/*.egg-info
+## Notebooks
+.ipynb_checkpoints/
+## Virtual environment
+python/.venv/
+
+# IDE related
+*.idea/
+*.sublime-*`
+.cache/
+.vscode/
+
+# Mac related
+.DS_Store
+
