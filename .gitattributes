@@ -1,0 +1,11 @@
+# Default 
+* text=auto
+
+*.py text
+*.csv text
+*.md text
+*.rst text
+
+*.png binary
+*.jpg binary
+*.jpeg binary
