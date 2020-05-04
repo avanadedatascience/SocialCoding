@@ -40,3 +40,21 @@ from sklearn.ensemble import GradientBoostingClassifier
 gbc = GradientBoostingClassifier()
 gbc.fit(X_train_pret, y_train)
 pred_train = gbc.predict(X_train_pret)
+
+#Implement the random search for the best hyperparameters
+from sklearn.model_selection import RandomizedSearchCV
+import scipy.stats as stats
+
+param_dist = {'n_estimators': stats.randint(150, 1000),
+              'learning_rate': stats.uniform(0.01, 0.6),   
+              'max_depth': [3, 5, 8]}
+
+clf = RandomizedSearchCV(gbc, 
+                         param_distributions = param_dist,
+                         cv = 3,  
+                         scoring = 'roc_auc',  
+                         n_jobs = -1)
+
+clf.fit(X_train_pret, y_train)
+
+print("best estimator :", clf.best_estimator_)
